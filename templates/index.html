@@ -65,6 +65,7 @@
             }
         })
     }
+    //처음에 listing 할때 for문의 i를 활용하여 make_memo할때 같이 전달한다.
     function listing() {
         $.ajax({
             type: "GET",
@@ -101,7 +102,7 @@
 
 
     }
-
+//listing에게 전달받은 i를 id로 받으면 index의 역할을 할수 있는 id가 된다. 이걸로 각각의 카드를 구분한다. 
     function make_memo(title, memo,i) {
         let temp_html = `<div class="col-sm-6" id= "${i}">
                 <div class="card">
@@ -142,7 +143,7 @@
                 `
 
 
-                $('#'+ i).replaceWith(temp_html)
+                $('#'+ i).replaceWith(temp_html)//전달받은 i를 id로 갖는 카드를 수정하는 카드로 바꾼다.
             }
         //     //     $('.col-sm-6, #maked').each(function (index, item) { // 인덱스는 말 그대로 인덱스 // item 은 해당 선택자인 객체를 나타냅니다. $(item).addClass('li_0' + index); // item 과 this는 같아서 일반적으로 this를 많이 사용합니다. // $(this).addClass('li_0' + index); });
         
